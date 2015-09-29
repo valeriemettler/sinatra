@@ -10,3 +10,10 @@ get '/hello/:name' do
   #params[:name]  returns [name]
   "Hello there, #{params[:name]}." #returns 'Hello there, [name].''
 end
+
+#This route will load the form.erb ERB (Embedded Ruby) file from a views/ directory.
+# ERB files are normal HTML files which allow you to include Ruby code inside tags,
+# which will be parsed before being sent to the browser
+get '/form' do
+  erb :form
+end
