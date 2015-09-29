@@ -1,15 +1,17 @@
-# At http://localhost:9393/form you'll see: <br>
-#hello from the view
+<!-- # At http://localhost:9393/form you'll see: <br>
+#hello from the view -->
 <!-- <form action="/form" method="post">
     <input type="text" name="message">
     <input type="submit">
 </form> -->
-
-<h4>Enter your bookmark URLs and tags here:</h4>
-<div>
+<!--
+<h4>Enter your bookmark URLs and tags here:</h4> -->
+<section id="add">
     <form action="/form" method="post">
         <input type='text' id='urlInput' name='url' placeholder='URL'>
         <input type='text' id='tagInput' name='tag' placeholder='Tag'>
         <input type="submit">
     </form>
-</div>
+</section>
+
+<% # display bookmarks %>

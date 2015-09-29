@@ -5,6 +5,7 @@ base_uri = 'https://girldevchat.firebaseio.com/'
 
 firebase = Firebase::Client.new(base_uri)
 
+
 get '/about' do
   'A little about me.'
 end
@@ -34,6 +35,15 @@ post '/form' do
     #"#{params[:url]}" + " #" + "#{params[:tag]}"
     # puts params[:url]
     # puts params[:tag]
+    erb :form
+end
+
+
+post '/form' do
+  # get bookmarks from firebase
+  @bookmarks = firebase.get("bookmarks")
+  #load the form.erb file:
+  redirect '/'
 end
 
 

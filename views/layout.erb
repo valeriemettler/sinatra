@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf8">
+  <title>Bookmarker | Sinatra and Firebase</title>
+<!--   <link href="/reset.css" rel="stylesheet">
+  <link href="/style.css" rel="stylesheet"> -->
+</head>
+<body>
+  <header>
+    <hgroup>
+      <h1><a href="/form">Bookmarks</a></h1>
+      <h4>Enter your bookmark URLs and tags here:</h4>
+    </hgroup>
+  </header>
+
+  <div id="main">
+<!--     ERB tag display what is inside them
+    Sinatra displays this file (layout.erb) on all Routes
+    The content for a route will be inserted where yeild is.
+    "yeild" = stop, insert, continue -->
+    <%= @title %>
+    <%= yield %>
+
+  </div>
+
+  <footer>
+    <p><small>An app by <a href="http://vmlabs.xyz">vmlabs.xyz</a>.</small></p>
+  </footer>
+</body>
+</html>
