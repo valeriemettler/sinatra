@@ -1,4 +1,9 @@
 require 'sinatra'
+require 'firebase'
+
+base_uri = 'https://girldevchat.firebaseio.com/'
+
+firebase = Firebase::Client.new(base_uri)
 
 get '/about' do
   'A little about me.'
@@ -20,7 +25,21 @@ get '/form' do
 end
 
 #post => update (create and delete)
+# post '/form' do
+#   "You said '#{params[:message]}'"  #You said 'hi'.
+# end
+
 post '/form' do
-  "You said '#{params[:message]}'"
+    firebase.push("bookmark", { :url => params[:url], :tag => params[:tag]})
+    #"#{params[:url]}" + " #" + "#{params[:tag]}"
+    # puts params[:url]
+    # puts params[:tag]
+end
+
+
+#not found route using Sinatra's status method. Can be used on any status code.
+not_found do
+  status 404
+  'not found'
 end
 
